@@ -5,10 +5,59 @@ import ParallaxBackground from "../components/ParallaxBackground"
 import AnimatedText from "../components/AnimatedText"
 import GradientButton from "../components/GradientButton"
 import AnimatedCard from "../components/AnimatedCard"
+import { useRef } from "react"
+import emailjs from "@emailjs/browser"
+import { Toaster, toast } from 'react-hot-toast'
 
 const ContactPage = () => {
+  const form = useRef()
+
+  const sendEmail = (e) => {
+    e.preventDefault()
+    
+    toast.promise(
+      emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      ),
+      {
+        loading: 'Sending message...',
+        success: () => {
+          form.current.reset()
+          return 'Message sent successfully! 🎉'
+        },
+        error: 'Failed to send message 😔',
+      }
+    )
+  }
+
   return (
     <main className="min-h-screen relative">
+      <Toaster 
+        position="top-center"
+        toastOptions={{
+          duration: 3000,
+          style: {
+            background: '#333',
+            color: '#fff',
+            borderRadius: '10px',
+          },
+          success: {
+            iconTheme: {
+              primary: '#4ade80',
+              secondary: '#fff',
+            },
+          },
+          error: {
+            iconTheme: {
+              primary: '#ef4444',
+              secondary: '#fff',
+            },
+          },
+        }}
+      />
       <ParallaxBackground
         bgImage="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1932&auto=format&fit=crop"
         overlayColor="rgba(0, 0, 0, 0.7)"
@@ -52,7 +101,7 @@ const ContactPage = () => {
             {/* Contact Form */}
             <AnimatedCard className="p-4 sm:p-6 md:p-8">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Send Us a Message</h2>
-              <form className="space-y-4">
+              <form ref={form} onSubmit={sendEmail} className="space-y-4">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label htmlFor="name" className="block text-sm font-medium">
@@ -60,8 +109,10 @@ const ContactPage = () => {
                     </label>
                     <input
                       id="name"
+                      name="name"
                       placeholder="Your Name"
                       className="w-full px-4 py-2 rounded-lg bg-background border border-border/50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                      required
                     />
                   </div>
                   <div className="space-y-2">
@@ -70,9 +121,11 @@ const ContactPage = () => {
                     </label>
                     <input
                       id="email"
+                      name="email"
                       type="email"
                       placeholder="you@example.com"
                       className="w-full px-4 py-2 rounded-lg bg-background border border-border/50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                      required
                     />
                   </div>
                 </div>
@@ -82,8 +135,10 @@ const ContactPage = () => {
                   </label>
                   <input
                     id="subject"
+                    name="subject"
                     placeholder="How can we help you?"
                     className="w-full px-4 py-2 rounded-lg bg-background border border-border/50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                    required
                   />
                 </div>
                 <div className="space-y-2">
@@ -92,12 +147,14 @@ const ContactPage = () => {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     placeholder="Your message..."
                     rows={4}
                     className="w-full px-4 py-2 rounded-lg bg-background border border-border/50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary resize-none"
+                    required
                   ></textarea>
                 </div>
-                <GradientButton className="w-full">Send Message</GradientButton>
+                <GradientButton type="submit" className="w-full">Send Message</GradientButton>
               </form>
             </AnimatedCard>
 
