@@ -13,6 +13,7 @@ const HomePage = lazy(() => import("./pages/HomePage"))
 const AboutPage = lazy(() => import("./pages/AboutPage"))
 const ServicesPage = lazy(() => import("./pages/ServicesPage"))
 const PricingPage = lazy(() => import("./pages/PricingPage"))
+const PaymentPage = lazy(() => import("./pages/PaymentPage"))
 const ContactPage = lazy(() => import("./pages/ContactPage"))
 
 // Loading component for lazy-loaded routes
@@ -34,6 +35,7 @@ const AnimatedRoutes = () => {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/payment" element={<PaymentPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </Suspense>
