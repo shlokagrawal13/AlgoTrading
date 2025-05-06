@@ -8,26 +8,28 @@ const ParallaxBackground = ({
   children, 
   bgImage, 
   overlayColor = "rgba(0, 0, 0, 0.5)",
-  parallaxStrength = 0.2 
+  parallaxStrength = 0.15 // Reduced from 0.2 for smoother effect
 }) => {
   const [isMounted, setIsMounted] = useState(false)
   const isReducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)')
   const isMobile = useMediaQuery('(max-width: 768px)')
   
   const { scrollY } = useScroll({
-    layoutEffect: false // This fixes the hydration warning
+    enabled: !isMobile && !isReducedMotion, // Disable parallax on mobile and when reduced motion is preferred
+    layoutEffect: false
   })
   
   const y = useTransform(
     scrollY,
     [0, 1000],
-    [0, 300 * (isReducedMotion ? 0 : parallaxStrength)]
+    [0, 200 * (isReducedMotion ? 0 : parallaxStrength)],
+    {
+      clamp: false // Allow smoother interpolation
+    }
   )
 
-  // Optimize image loading
   const [imageLoaded, setImageLoaded] = useState(false)
   
-  // Memoize the preload function
   const preloadImage = useCallback(() => {
     const img = new Image()
     img.src = bgImage
@@ -53,29 +55,37 @@ const ParallaxBackground = ({
           opacity: imageLoaded ? 1 : 0,
           transition: 'opacity 0.5s ease-in-out',
           willChange: 'transform',
+          backfaceVisibility: 'hidden',
+          transform: 'translateZ(0)',
+          WebkitBackfaceVisibility: 'hidden',
+          WebkitTransform: 'translateZ(0)'
         }}
       />
       
-      {/* Low-quality image placeholder */}
+      {/* Low-quality image placeholder with blur */}
       {!imageLoaded && (
         <div
-          className="absolute inset-0 w-full h-full blur-lg"
+          className="absolute inset-0 w-full h-full blur-lg transform-gpu"
           style={{
-            backgroundImage: `url(${bgImage}?w=20)`, // Load tiny version first
+            backgroundImage: `url(${bgImage}?w=20)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
+            willChange: 'transform'
           }}
         />
       )}
 
-      {/* Overlay */}
+      {/* Optimized overlay with reduced opacity transitions */}
       <div
-        className="absolute inset-0 w-full h-full"
-        style={{ backgroundColor: overlayColor }}
+        className="absolute inset-0 w-full h-full transition-opacity duration-300"
+        style={{ 
+          backgroundColor: overlayColor,
+          willChange: 'opacity'
+        }}
       />
 
-      {/* Content */}
-      <div className="relative z-10">
+      {/* Content with improved stacking context */}
+      <div className="relative z-10 transform-gpu">
         {children}
       </div>
     </div>

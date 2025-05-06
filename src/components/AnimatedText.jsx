@@ -11,7 +11,10 @@ const AnimatedText = ({ text, className = "" }) => {
     hidden: { opacity: 0 },
     visible: (i = 1) => ({
       opacity: 1,
-      transition: { staggerChildren: 0.12, delayChildren: 0.04 * i },
+      transition: { 
+        staggerChildren: 0.08, // Reduced from 0.12
+        delayChildren: 0.02 * i // Reduced from 0.04
+      },
     }),
   }
 
@@ -21,34 +24,47 @@ const AnimatedText = ({ text, className = "" }) => {
       y: 0,
       transition: {
         type: "spring",
-        damping: 12,
-        stiffness: 100,
+        damping: 15, // Increased from 12 for smoother motion
+        stiffness: 150, // Increased from 100 for more responsiveness
+        duration: 0.3 // Added duration constraint
       },
     },
     hidden: {
       opacity: 0,
-      y: 20,
+      y: 15, // Reduced from 20 for subtler animation
       transition: {
         type: "spring",
-        damping: 12,
-        stiffness: 100,
+        damping: 15,
+        stiffness: 150,
       },
     },
   }
 
   return (
     <motion.div
-      style={{ display: "flex", justifyContent:'center', flexWrap: "wrap " }}
+      style={{ 
+        display: "flex", 
+        flexWrap: "wrap",
+        justifyContent: 'center',
+        alignItems: 'center',
+        willChange: 'transform', // Optimize for animations
+      }}
       variants={container}
       initial="hidden"
-      animate="visible"
-      className={className}
+      whileInView="visible"
+      viewport={{ once: true, margin: "-50px" }}
+      className={`${className} transform-gpu`} // Added transform-gpu for hardware acceleration
     >
       {words.map((word, index) => (
         <motion.span
           key={index}
           variants={child}
-          style={{ marginRight: "0.25em", display: "inline-block" }}
+          style={{ 
+            marginRight: "0.25em", 
+            display: "inline-block",
+            willChange: 'transform',
+            backfaceVisibility: 'hidden' // Prevent flickering
+          }}
           className="transform-gpu"
         >
           {word}

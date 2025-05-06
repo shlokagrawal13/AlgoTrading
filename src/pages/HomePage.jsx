@@ -9,14 +9,6 @@ import AnimatedCard from "../components/AnimatedCard"
 import GradientButton from "../components/GradientButton"
 
 const HomePage = () => {
-  const targetRef = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ["start start", "end start"],
-  })
-
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
 
   const features = [
     {
@@ -95,11 +87,11 @@ const HomePage = () => {
         bgImage="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1932&auto=format&fit=crop"
         overlayColor="rgba(0, 0, 0, 0.7)"
       >
-        <section ref={targetRef} className="min-h-screen flex items-center pt-20">
+        <section  className="min-h-screen flex items-center pt-20">
           <div className="container px-4 mx-auto">
             <div className="flex flex-col lg:flex-row items-center">
-              <motion.div style={{ y, opacity }} className="lg:w-1/2 lg:pr-8 ">
-                <div className="text-left">
+              <motion.div className="lg:w-1/2 lg:pr-8 flex flex-col  items-center ">
+                <div className="text-center">
                   <AnimatedText
                     text="Advanced Algo Trading Solutions for Modern Markets"
                     className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white"
@@ -109,7 +101,7 @@ const HomePage = () => {
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ delay: 0.5 }}
-                  className=" text-lg md:text-xl text-muted-foreground mb-8"
+                  className=" text-lg md:text-xl text-center text-muted-foreground mb-8"
                 >
                   Leverage cutting-edge algorithmic trading strategies and technologies to gain a competitive edge in
                   today's financial markets.
@@ -119,10 +111,14 @@ const HomePage = () => {
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ delay: 0.7 }}
-                  className="flex flex-col sm:flex-row gap-4"
+                  className="flex flex-row gap-4"
                 >
-                  <GradientButton>Get Started</GradientButton>
+                  <Link to="/pricing">
+                    <GradientButton>Get Started</GradientButton>
+                  </Link>
+                  <Link to="/about">
                   <GradientButton primary={false}>Learn More</GradientButton>
+                  </Link>
                 </motion.div>
               </motion.div>
 
@@ -136,7 +132,7 @@ const HomePage = () => {
                   <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-purple-600 rounded-lg blur opacity-75 animate-pulse"></div>
                   <div className="relative bg-background rounded-lg overflow-hidden border border-border/50">
                     <img
-                      src="https://images.unsplash.com/photo-1642790551116-18e150f248e9?q=80&w=2070&auto=format&fit=crop"
+                      src="\image (6).jpg"
                       alt="Trading Dashboard"
                       className="w-full h-auto rounded-lg"
                     />

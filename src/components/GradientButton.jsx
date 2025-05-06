@@ -15,8 +15,8 @@ const GradientButton = ({
   const baseStyles = `
     relative inline-flex items-center justify-center
     px-6 py-3 text-sm font-medium
-    rounded-full transition-all duration-300
-    transform-gpu hover:scale-105
+    rounded-full transition-all duration-200
+    transform-gpu will-change-transform
     focus:outline-none focus:ring-2 focus:ring-offset-2
     disabled:opacity-50 disabled:cursor-not-allowed
     ${className}
@@ -35,11 +35,26 @@ const GradientButton = ({
     border border-border/50
   `
 
+  const motionConfig = {
+    whileHover: { scale: 1.02 },
+    whileTap: { scale: 0.98 },
+    transition: {
+      type: "spring",
+      stiffness: 400,
+      damping: 25,
+      mass: 0.5,
+      duration: 0.2
+    }
+  }
+
   const buttonContent = (
     <>
       <span className="relative z-10">{children}</span>
-      <div className="absolute inset-0 rounded-full overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div 
+        className="absolute inset-0 rounded-full overflow-hidden"
+        style={{ willChange: 'opacity' }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
       </div>
     </>
   )
@@ -49,6 +64,12 @@ const GradientButton = ({
     disabled,
     type,
     onClick,
+    style: {
+      backfaceVisibility: 'hidden',
+      WebkitBackfaceVisibility: 'hidden',
+      transform: 'translateZ(0)',
+      WebkitTransform: 'translateZ(0)'
+    }
   }
 
   if (to) {
@@ -56,8 +77,7 @@ const GradientButton = ({
       <Link to={to}>
         <motion.button
           {...buttonProps}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          {...motionConfig}
         >
           {buttonContent}
         </motion.button>
@@ -68,8 +88,7 @@ const GradientButton = ({
   return (
     <motion.button
       {...buttonProps}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+      {...motionConfig}
     >
       {buttonContent}
     </motion.button>

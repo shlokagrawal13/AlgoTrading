@@ -1,5 +1,3 @@
-"use client"
-
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import ParallaxBackground from "../components/ParallaxBackground"
@@ -10,8 +8,7 @@ import AnimatedCard from "../components/AnimatedCard"
 const PricingPage = () => {
   const plans = [
     {
-      name: "Basic",
-      price: "49",
+      title: "Monthly - Basic",
       description: "Perfect for getting started with algorithmic trading",
       features: [
         "Basic trading algorithms",
@@ -19,12 +16,13 @@ const PricingPage = () => {
         "Email support",
         "Basic market data",
         "Up to 5 trading strategies",
+        "Remote Support"
       ],
-      popular: false,
+      price: "₹17,700 Including GST",
+      popular: false
     },
     {
-      name: "Professional",
-      price: "99",
+      title: "Monthly - Advance",
       description: "Advanced features for serious traders",
       features: [
         "Advanced trading algorithms",
@@ -34,12 +32,13 @@ const PricingPage = () => {
         "Unlimited trading strategies",
         "Custom strategy development",
         "Risk management tools",
+        "Remote Support"
       ],
-      popular: true,
+      price: "₹24,780 Including GST",
+      popular: true
     },
     {
-      name: "Enterprise",
-      price: "299",
+      title: "Monthly - Premium",
       description: "Full-featured solution for institutions",
       features: [
         "Custom algorithms",
@@ -49,12 +48,76 @@ const PricingPage = () => {
         "Unlimited everything",
         "Custom integration",
         "Advanced analytics",
-        "Dedicated infrastructure",
+        "Dedicated infrastructure"
       ],
-      popular: false,
+      price: "₹38,940 Including GST",
+      popular: false
     },
-  ]
-
+    {
+      title: "Quarterly - Basic",
+      description: "Basic trading plan billed quarterly",
+      features: [
+        "Basic trading algorithms",
+        "Standard execution speed",
+        "Email support",
+        "Basic market data",
+        "Up to 5 trading strategies",
+        "Remote Support"
+      ],
+      price: "₹28,320 Including GST",
+      popular: false
+    },
+    {
+      title: "Quarterly - Advance",
+      description: "Advanced trading plan billed quarterly",
+      features: [
+        "Advanced trading algorithms",
+        "Priority execution speed",
+        "24/7 Priority support",
+        "Real-time market data",
+        "Unlimited trading strategies",
+        "Custom strategy development",
+        "Risk management tools",
+        "Remote Support"
+      ],
+      price: "₹60,180 Including GST",
+      popular: true
+    },
+    {
+      title: "Quarterly - Premium",
+      description: "Premium trading plan billed quarterly",
+      features: [
+        "Custom algorithms",
+        "Ultra-low latency execution",
+        "Dedicated support team",
+        "Full market data access",
+        "Unlimited everything",
+        "Custom integration",
+        "Advanced analytics",
+        "Dedicated infrastructure"
+      ],
+      price: "₹92,630 Including GST",
+      popular: false
+    },
+    {
+      title: "Yearly - Customize Advance",
+      description: "Custom plan for institutional traders billed yearly",
+      features: [
+        "Custom algorithm with Preferred Data",
+        "Highest Accuracy and fast execution",
+        "Dedicated support team",
+        "Full market data access",
+        "Unlimited everything",
+        "Custom integration",
+        "Advanced analytics",
+        "Dedicated infrastructure",
+        "Live Market Data with Analysis"
+      ],
+      price: "₹1,47,500 Including GST",
+      popular: true
+    }
+  ];
+  
   return (
     <main className="min-h-screen">
       <ParallaxBackground
@@ -89,7 +152,8 @@ const PricingPage = () => {
         </section>
       </ParallaxBackground>
 
-      <section className="py-20 relative overflow-hidden">
+       {/* Pricing Plans */}
+       <section className="py-20 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
           <div className="absolute top-40 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
           <div className="absolute bottom-40 -right-40 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl"></div>
@@ -97,47 +161,39 @@ const PricingPage = () => {
 
         <div className="container px-4 mx-auto relative z-10">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {plans.map((plan, index) => (
-              <AnimatedCard
-                key={index}
-                delay={index * 0.1}
-                className={`${
-                  plan.popular ? "border-primary shadow-lg shadow-primary/10" : ""
-                } relative`}
-              >
-                {plan.popular && (
-                  <div className="absolute top-0 right-0 bg-primary text-white px-4 py-1 text-sm font-medium rounded-bl-lg rounded-tr-xl">
-                    Most Popular
+            {plans.map((service, index) => (
+              <AnimatedCard key={index} delay={index * 0.1} className={`p-8 ${service.popular ? 'border-primary' : ''}`}>
+                {service.popular && (
+                  <div className="absolute -top-6 right-0">
+                    <span className="px-3 py-1 text-xs font-medium text-white bg-primary rounded-full">
+                      Most Popular
+                    </span>
                   </div>
                 )}
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                  <div className="flex items-baseline mb-4">
-                    <span className="text-4xl font-bold">$</span>
-                    <span className="text-6xl font-bold">{plan.price}</span>
-                    <span className="text-muted-foreground">/month</span>
-                  </div>
-                  <p className="text-muted-foreground mb-6">{plan.description}</p>
-                  <ul className="space-y-3 mb-8">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-start">
-                        <div className="mr-3 mt-1">
-                          <i className="fas fa-check text-primary"></i>
-                        </div>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <GradientButton className="w-full" primary={plan.popular}>
+                <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                <p className="text-muted-foreground mb-6">{service.description}</p>
+                <div className="mb-6">
+                  <span className="text-3xl font-bold">{service.price}</span>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center">
+                      <i className="fas fa-check text-primary mr-2"></i>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link to="/payment">
+                  <GradientButton className="w-full" primary={service.popular}>
                     Get Started
                   </GradientButton>
-                </div>
+                </Link>
               </AnimatedCard>
             ))}
           </div>
         </div>
       </section>
-
+      
       {/* FAQ Section */}
       <section className="py-16 bg-muted/10">
         <div className="container px-4 mx-auto">

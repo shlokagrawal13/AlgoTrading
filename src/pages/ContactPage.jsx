@@ -200,9 +200,9 @@ const ContactPage = () => {
                     <div>
                       <h3 className="font-medium text-base sm:text-lg mb-1">Visit Us</h3>
                       <address className="text-sm sm:text-base text-muted-foreground not-italic">
-                        123 Trading Street<br />
-                        New York, NY 10001<br />
-                        United States
+                      Garhi Chaukhandi,<br />
+                      Sector 68, Noida, Basi Bahuddin Nagar,<br />
+                      Uttar Pradesh 201307
                       </address>
                     </div>
                   </div>
@@ -213,7 +213,7 @@ const ContactPage = () => {
               <AnimatedCard className="w-full overflow-hidden">
                 <div className="w-full h-[250px] sm:h-[300px] md:h-[350px] relative">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.11976397304903!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1631541227159!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.7657553787235!2d77.3887905742218!3d28.60680328525086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cefad54cf1179%3A0x49827ab4a7cd33fe!2sGarhi%20chaukhandi!5e0!3m2!1sen!2sin!4v1746489777825!5m2!1sen!2sin"
                     className="absolute inset-0 w-full h-full border-0 rounded-lg"
                     allowFullScreen
                     loading="lazy"
