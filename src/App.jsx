@@ -27,6 +27,14 @@ const PageLoader = () => (
 const AnimatedRoutes = () => {
   const location = useLocation()
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant" // Use "instant" instead of "smooth" for better UX during page transitions
+    })
+  }, [location.pathname])
+
   return (
     <AnimatePresence mode="wait">
       <Suspense fallback={<PageLoader />}>
