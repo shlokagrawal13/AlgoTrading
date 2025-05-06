@@ -18,16 +18,16 @@ const Footer = () => {
       links: [
         { name: "About", href: "/about" },
         { name: "Contact", href: "/contact" },
-        { name: "Blog", href: "/blog" },
+        // { name: "Blog", href: "/blog" },
       ],
     },
     {
       title: "Resources",
       links: [
-        { name: "Documentation", href: "/docs" },
-        { name: "Help Center", href: "/help" },
-        { name: "Terms", href: "/terms" },
-        { name: "Privacy", href: "/privacy" },
+        // { name: "Documentation", href: "/docs" },
+        { name: "Help Center", href: "/contact" },
+        // { name: "Terms", href: "/terms" },
+        // { name: "Privacy", href: "/privacy" },
       ],
     },
   ]
@@ -71,7 +71,7 @@ const Footer = () => {
           {/* Brand Section */}
           <motion.div variants={itemVariants} className="lg:col-span-2">
             <Link to="/" className="inline-block">
-              <span className="text-2xl font-bold gradient-text">AlgoTrading</span>
+              <span className="text-2xl font-bold gradient-text">FixonWealth</span>
             </Link>
             <p className="mt-4 text-muted-foreground max-w-md">
               Transform your trading experience with our advanced algorithmic trading platform.
@@ -109,10 +109,10 @@ const Footer = () => {
           className="mt-12 pt-8 border-t border-border/10 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
         >
           <p className="text-sm text-muted-foreground">
-            © {currentYear} AlgoTrading. All rights reserved.
+            © {currentYear} FixonWealth. All rights reserved.
           </p>
           <div className="flex items-center space-x-6">
-            <a
+            {/* <a
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -120,9 +120,9 @@ const Footer = () => {
               aria-label="Follow us on Twitter"
             >
               <i className="fab fa-twitter text-lg" />
-            </a>
+            </a> */}
             <a
-              href="https://github.com"
+              href="https://github.com/shlokagrawal13"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
@@ -131,7 +131,7 @@ const Footer = () => {
               <i className="fab fa-github text-lg" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/shlok-agrawal-84a766234/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"

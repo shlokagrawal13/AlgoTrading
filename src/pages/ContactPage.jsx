@@ -170,11 +170,11 @@ const ContactPage = () => {
                     <div>
                       <h3 className="font-medium text-base sm:text-lg mb-1">Email Us</h3>
                       <a href="mailto:info@algotrading.com" className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors block">
-                        info@algotrading.com
+                         admin@fixonwealth.in
                       </a>
-                      <a href="mailto:support@algotrading.com" className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors block">
+                      {/* <a href="mailto:support@algotrading.com" className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors block">
                         support@algotrading.com
-                      </a>
+                      </a> */}
                     </div>
                   </div>
 
@@ -184,11 +184,11 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h3 className="font-medium text-base sm:text-lg mb-1">Call Us</h3>
-                      <a href="tel:+15551234567" className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors block">
-                        +1 (555) 123-4567
+                      <a href="tel:+918224864281" className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors block">
+                      +91 8224864281
                       </a>
-                      <a href="tel:+15559876543" className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors block">
-                        +1 (555) 987-6543
+                      <a href="tel:+917354867439" className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors block">
+                        +91 7354867439
                       </a>
                     </div>
                   </div>

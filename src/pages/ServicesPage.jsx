@@ -9,42 +9,55 @@ import GradientButton from "../components/GradientButton"
 const ServicesPage = () => {
   const services = [
     {
-      title: "Algorithm Development",
+      title: "Algo Services (Algorithmic Trading Services)",
       description:
-        "Our team of quantitative analysts and developers create custom trading algorithms tailored to your specific needs and goals.",
+        "We offer advanced algorithmic trading solutions, enabling automated and data-driven trading to maximize your returns.",
       icon: "code",
       features: [
-        "Custom strategy development",
-        "Rigorous backtesting and optimization",
-        "Performance analysis and reporting",
+        "Custom trading algorithm development",
+        "High-frequency trading solutions",
+        "Backtesting and performance optimization",
       ],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1551288049-b11d4a0b287f",
     },
     {
-      title: "Infrastructure Services",
+      title: "Wealth Management",
       description:
-        "We provide high-performance, low-latency infrastructure solutions designed specifically for algorithmic trading.",
-      icon: "server",
-      features: ["High-performance trading servers", "Secure and reliable connectivity", "24/7 technical support"],
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop",
+        "Comprehensive wealth management services to help you build, manage, and preserve your wealth for the long term.",
+      icon: "wallet",
+      features: [
+        "Personalized investment planning",
+        "Asset allocation and diversification",
+        "Tax and retirement planning strategies",
+      ],
+      image: "https://images.unsplash.com/photo-1581090700227-4c4f50b6fd6c?q=80&w=2070&auto=format&fit=crop",
     },
     {
-      title: "Data Services",
+      title: "Portfolio Management",
       description:
-        "Access comprehensive market data and analytics to power your trading strategies and decision-making process.",
-      icon: "database",
-      features: ["Real-time market data feeds", "Historical data archives", "Custom data integration"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+        "Professional portfolio management designed to align with your financial goals while managing risks effectively.",
+      icon: "chart-line",
+      features: [
+        "Dynamic portfolio rebalancing",
+        "Risk-adjusted performance tracking",
+        "Comprehensive reporting and insights",
+      ],
+      image: "https://images.unsplash.com/photo-1591696205602-2f950c417cb2?q=80&w=2070&auto=format&fit=crop",
     },
     {
-      title: "Risk Management",
+      title: "Advisory Services",
       description:
-        "Implement robust risk management frameworks to protect your capital and optimize your trading performance.",
-      icon: "shield-alt",
-      features: ["Real-time risk monitoring", "Position sizing optimization", "Drawdown protection mechanisms"],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
+        "Expert financial advisory services to guide your investment decisions and help you navigate complex financial markets.",
+      icon: "user-tie",
+      features: [
+        "Tailored investment advice",
+        "Strategic financial planning",
+        "Ongoing market insights and recommendations",
+      ],
+      image: "https://images.unsplash.com/photo-1581092580497-e0d7e41d0d4b?q=80&w=2070&auto=format&fit=crop",
     },
-  ]
+  ];
+  
 
   return (
     <main>
@@ -139,7 +152,7 @@ const ServicesPage = () => {
                   transition={{ duration: 0.4, ease: "easeOut", delay: 0.2 }}
                   viewport={{ once: true, margin: "-50px" }}
                 >
-                  <GradientButton>Learn More</GradientButton>
+                  {/* <GradientButton>Learn More</GradientButton> */}
                 </motion.div>
               </div>
               <motion.div

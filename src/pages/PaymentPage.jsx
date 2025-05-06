@@ -63,7 +63,7 @@ const PaymentPage = () => {
                   <i className="fas fa-qrcode mr-2"></i>
                   QR Payment
                 </button>
-                <button
+                {/* <button
                   className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                     activeTab === "card" ? "bg-primary text-white shadow-md" : "hover:bg-muted"
                   }`}
@@ -71,7 +71,7 @@ const PaymentPage = () => {
                 >
                   <i className="fas fa-credit-card mr-2"></i>
                   Card Payment
-                </button>
+                </button> */}
               </div>
             </div>
 
@@ -89,15 +89,17 @@ const PaymentPage = () => {
                       transition={{ duration: 0.5 }}
                       className="border p-4 rounded-lg bg-white"
                     >
+                                            <p className="text-center font-semibold text-sm text-black mb-4">UPI ID:-8319830462@ybl</p>
+
                       <div className="relative w-64 h-64 mx-auto">
                         <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-600 blur-sm opacity-20 animate-pulse rounded-lg"></div>
                         <img
-                          src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://algotrading.com/payment/123456"
+                          src="QR.jpg"
                           alt="Payment QR Code"
                           className="w-full h-full relative z-10"
                         />
                       </div>
-                      <p className="text-center text-sm text-black mt-4">Scan with your banking app</p>
+                      <p className="text-center text-sm text-black mt-4">Scan with your UPI app</p>
                     </motion.div>
                   </div>
                   <div className="mt-8">

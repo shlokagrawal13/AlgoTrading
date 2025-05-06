@@ -13,7 +13,7 @@ const Preloader = () => {
           className="relative"
         >
           <div className="text-4xl font-bold gradient-text animate-gpu">
-            AlgoTrading
+          FixonWealth
           </div>
           <motion.div
             initial={{ width: "0%" }}

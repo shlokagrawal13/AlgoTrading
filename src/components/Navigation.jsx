@@ -82,7 +82,7 @@ const Navigation = () => {
             className="flex-shrink-0"
           >
             <Link to="/" className="flex items-center">
-              <span className="text-2xl font-bold gradient-text">AlgoTrading</span>
+              <span className="text-2xl font-bold gradient-text">FixonWealth</span>
             </Link>
           </motion.div>
 

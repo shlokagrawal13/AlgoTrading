@@ -60,23 +60,23 @@ const HomePage = () => {
     {
       quote:
         "Implementing the algorithmic trading solutions from this team has transformed our investment strategy. Our returns have increased by 32% while reducing volatility.",
-      author: "Sarah Johnson",
-      position: "Investment Director, Apex Capital",
-      avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+      author: "Tripti ucheniya",
+      position: "founder- Prakanya interprises Pvt Ltd",
+      avatar: "trapti.jpg",
     },
     {
       quote:
         "The custom trading algorithms developed for our firm have given us a significant edge in the markets. Their team's technical expertise is unmatched.",
-      author: "Michael Chen",
-      position: "Head of Trading, Quantum Investments",
-      avatar: "https://randomuser.me/api/portraits/men/46.jpg",
+      author: "Sanjay Jadhav",
+      position: "co-founder-Triviaya logistics Pvt Ltd",
+      avatar: "sanjay.jpg",
     },
     {
       quote:
         "Working with this team has been phenomenal. Their infrastructure solutions have drastically reduced our execution latency and improved our fill rates.",
-      author: "David Rodriguez",
-      position: "CTO, Momentum Securities",
-      avatar: "https://randomuser.me/api/portraits/men/29.jpg",
+      author: "Kaushik chakraborty",
+      position: " Operation manager- altruist technology",
+      avatar: "kaushik.jpg",
     },
   ]
 
@@ -203,7 +203,7 @@ const HomePage = () => {
                   <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
                   <p className="text-muted-foreground">{feature.description}</p>
                   <div className="mt-4 flex items-center text-sm text-primary font-medium cursor-pointer group">
-                    <span>Learn more</span>
+                    {/* <span>Learn more</span> */}
                     <i className="fas fa-arrow-up-right ml-1 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
                   </div>
                 </div>
@@ -254,7 +254,7 @@ const HomePage = () => {
                   <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
                   <p className="text-muted-foreground">{service.description}</p>
                   <div className="mt-4">
-                    <GradientButton className="px-4 py-2 text-sm">Learn more</GradientButton>
+                    {/* <GradientButton className="px-4 py-2 text-sm">Learn more</GradientButton> */}
                   </div>
                 </div>
               </AnimatedCard>
@@ -365,8 +365,10 @@ const HomePage = () => {
                 viewport={{ once: true }}
                 className="flex flex-col sm:flex-row gap-4 justify-center"
               >
+                <Link to="/pricing">
                 <GradientButton>Get Started Today</GradientButton>
-                <GradientButton primary={false}>Schedule a Demo</GradientButton>
+                </Link>
+                {/* <GradientButton primary={false}>Schedule a Demo</GradientButton> */}
               </motion.div>
             </div>
           </div>

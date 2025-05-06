@@ -115,7 +115,7 @@ const AboutPage = () => {
                 className="space-y-4 text-muted-foreground"
               >
                 <p>
-                  Founded in 2015, AlgoTrading has been at the forefront of algorithmic trading innovation. What started
+                  Founded in 2015, FixonWealth                  has been at the forefront of algorithmic trading innovation. What started
                   as a small team of financial engineers and software developers has grown into a global company serving
                   traders and institutions worldwide.
                 </p>
