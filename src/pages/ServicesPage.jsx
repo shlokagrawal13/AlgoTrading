@@ -18,7 +18,7 @@ const ServicesPage = () => {
         "High-frequency trading solutions",
         "Backtesting and performance optimization",
       ],
-      image: "https://images.unsplash.com/photo-1551288049-b11d4a0b287f",
+      image: "Algo.jpg",
     },
     {
       title: "Wealth Management",
@@ -30,7 +30,7 @@ const ServicesPage = () => {
         "Asset allocation and diversification",
         "Tax and retirement planning strategies",
       ],
-      image: "https://images.unsplash.com/photo-1581090700227-4c4f50b6fd6c?q=80&w=2070&auto=format&fit=crop",
+      image: "Wealth.jpg",
     },
     {
       title: "Portfolio Management",
@@ -42,7 +42,7 @@ const ServicesPage = () => {
         "Risk-adjusted performance tracking",
         "Comprehensive reporting and insights",
       ],
-      image: "https://images.unsplash.com/photo-1591696205602-2f950c417cb2?q=80&w=2070&auto=format&fit=crop",
+      image: "Portfolio.jpg",
     },
     {
       title: "Advisory Services",
@@ -54,7 +54,7 @@ const ServicesPage = () => {
         "Strategic financial planning",
         "Ongoing market insights and recommendations",
       ],
-      image: "https://images.unsplash.com/photo-1581092580497-e0d7e41d0d4b?q=80&w=2070&auto=format&fit=crop",
+      image: "AdvisoryServices.jpg",
     },
   ];
   
