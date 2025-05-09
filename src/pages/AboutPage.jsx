@@ -28,28 +28,28 @@ const AboutPage = () => {
 
   const team = [
     {
-      name: "Alex Johnson",
+      name: "Prakshep Arora",
       position: "CEO & Founder",
       bio: "Former quantitative analyst with 15+ years of experience in financial markets.",
-      image: "https://randomuser.me/api/portraits/men/32.jpg",
+      image: "Prakshep.jpg",
     },
     {
-      name: "Sarah Chen",
+      name: "Ishika Patel",
       position: "CTO",
       bio: "PhD in Computer Science with expertise in machine learning and distributed systems.",
-      image: "https://randomuser.me/api/portraits/women/44.jpg",
+      image: "Ishika.jpg",
     },
     {
-      name: "Michael Rodriguez",
+      name: "Pooja Baghel",
       position: "Head of Research",
       bio: "Former hedge fund manager with a background in statistical arbitrage strategies.",
-      image: "https://randomuser.me/api/portraits/men/46.jpg",
+      image: "Pooja.jpg",
     },
     {
-      name: "Emily Patel",
+      name: "Rashmi Narvariya",
       position: "Head of Client Services",
       bio: "10+ years experience in financial services and client relationship management.",
-      image: "https://randomuser.me/api/portraits/women/65.jpg",
+      image: "Rashmi.jpg",
     },
   ]
 
@@ -151,7 +151,7 @@ const AboutPage = () => {
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-purple-600 rounded-lg blur opacity-75"></div>
                 <div className="relative bg-background rounded-lg overflow-hidden border border-border/50">
                   <img
-                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop"
+                    src="About.jpg"
                     alt="Our team"
                     className="w-full h-auto rounded-lg"
                   />
@@ -253,7 +253,7 @@ const AboutPage = () => {
                 <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
                 <p className="text-primary text-sm mb-3">{member.position}</p>
                 <p className="text-muted-foreground text-sm">{member.bio}</p>
-                <div className="flex justify-center mt-4 space-x-3">
+                {/* <div className="flex justify-center mt-4 space-x-3">
                   {["linkedin", "twitter"].map((social) => (
                     <a
                       key={social}
@@ -263,7 +263,7 @@ const AboutPage = () => {
                       <i className={`fab fa-${social}`}></i>
                     </a>
                   ))}
-                </div>
+                </div> */}
               </AnimatedCard>
             ))}
           </div>

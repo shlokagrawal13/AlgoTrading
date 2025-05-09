@@ -132,7 +132,7 @@ const HomePage = () => {
                   <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-purple-600 rounded-lg blur opacity-75 animate-pulse"></div>
                   <div className="relative bg-background rounded-lg overflow-hidden border border-border/50">
                     <img
-                      src="\image (6).jpg"
+                      src="\AlgoHome.jpg"
                       alt="Trading Dashboard"
                       className="w-full h-auto rounded-lg"
                     />
