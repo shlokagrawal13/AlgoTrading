@@ -103,7 +103,7 @@ const ServicesPage = () => {
         <div className="container px-4 mx-auto relative z-10">
           {services.map((service, index) => (
             <div key={index} className={`grid lg:grid-cols-2 gap-8 md:gap-12 items-center ${index > 0 ? "mt-16 md:mt-24" : ""}`}>
-              <div className={index % 2 === 1 ? "order-2 lg:order-1" : ""}>
+              <div className={index % 0 === 1 ? "order-2 lg:order-1" : ""}>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
