@@ -26,8 +26,8 @@ const AboutPage = () => {
     },
     {
       title: "Originality",
-      description: "We believe in full Originality in our operations, pricing, and performance metrics.",
-      icon: "eye",
+      description: "Our System built for capital saving. We believe in Slow and Steady process, Our main goal is to focus to saving capital more than making profits.",
+      icon: "star",
     },
   ]
 
