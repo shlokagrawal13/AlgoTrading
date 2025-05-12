@@ -77,7 +77,7 @@ const ServicesPage = () => {
                 Our Services
               </motion.div>
               <AnimatedText
-                text="Comprehensive Algo Trading Solutions"
+                text="Exclusive Services For Investment & Trading"
                 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white"
               />
               <motion.p
@@ -86,7 +86,7 @@ const ServicesPage = () => {
                 transition={{ delay: 0.2 }}
                 className="text-lg text-white/80"
               >
-                Explore our full range of algorithmic trading services designed to give you an edge in today's markets.
+              Explore our comprehensive range of various services designed for investments and trading to fuel your portfolio in today's markets.
               </motion.p>
             </div>
           </div>

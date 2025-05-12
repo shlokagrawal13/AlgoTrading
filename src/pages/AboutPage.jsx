@@ -24,6 +24,11 @@ const AboutPage = () => {
       description: "We believe in full transparency in our operations, pricing, and performance metrics.",
       icon: "eye",
     },
+    {
+      title: "Originality",
+      description: "We believe in full Originality in our operations, pricing, and performance metrics.",
+      icon: "eye",
+    },
   ]
 
   const team = [

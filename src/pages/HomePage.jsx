@@ -61,21 +61,21 @@ const HomePage = () => {
       quote:
         "Implementing the algorithmic trading solutions from this team has transformed our investment strategy. Our returns have increased by 32% while reducing volatility.",
       author: "Tripti ucheniya",
-      position: "founder- Prakanya interprises Pvt Ltd",
+      position: "Founder- Prakanya interprises Pvt Ltd",
       avatar: "trapti.jpg",
     },
     {
       quote:
         "The custom trading algorithms developed for our firm have given us a significant edge in the markets. Their team's technical expertise is unmatched.",
       author: "Sanjay Jadhav",
-      position: "co-founder-Triviaya logistics Pvt Ltd",
+      position: "Co-founder-Triviaya logistics Pvt Ltd",
       avatar: "sanjay.jpg",
     },
     {
       quote:
         "Working with this team has been phenomenal. Their infrastructure solutions have drastically reduced our execution latency and improved our fill rates.",
       author: "Kaushik chakraborty",
-      position: " Operation manager- altruist technology",
+      position: " Operation manager- Altruist technology",
       avatar: "kaushik.jpg",
     },
   ]
